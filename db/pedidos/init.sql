@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS pedidos (
+  id SERIAL PRIMARY KEY,
+  cliente_id INTEGER NOT NULL,
+  producto VARCHAR(160) NOT NULL,
+  cantidad INTEGER NOT NULL CHECK (cantidad > 0),
+  precio NUMERIC(12,2) NOT NULL CHECK (precio >= 0),
+  creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
